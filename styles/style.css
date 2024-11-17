@@ -9,13 +9,16 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -35,4 +38,248 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  max-width: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 711px 399px;
+  gap: 30px;
+  /* justify-items: center; */
+  align-items: end;
+}
+
+.result__video-container {
+  max-width: 711px;
+  max-height: 386px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.result__video {
+  min-width: 100%;
+  max-height: 386px;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: inherit;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: text;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.2em;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+  min-width: 225px;
+  color: rgb(255 255 255 / 0.7);
+  padding: 2.5px 0;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: block;
+  min-height: 19px;
+  min-width: 19px;
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  position: absolute;
+  content: '';
+  inset: 1px;
+  background-color: #fff;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.button {
+  cursor: pointer;
+  max-height: 34px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.2em;
+  text-align: center;
+  padding: 6px 0;
+  color: #fff;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: -3px; /* Для полного отображения обводки */
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.search-form__submit-button {
+  align-self: end;
+  min-width: 194px;
+}
+
+.content__details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94em;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  height: 298px; /* Высота фиксированная для того, чтобы заголовок не падал вниз, если нет подходящих видео */
+  overflow-x: hidden;
+  overflow-y: auto; /* Убирает скролл, если нет подходящих видео */
+  position: relative;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__list-item:focus {
+  outline: none;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__list-item:hover {
+  cursor: pointer;
+  text-decoration: underline solid #fff 1px;
+  text-underline-offset: 7px;
+}
+
+.content__list-item:active {
+  background-color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin: 3px; /*Поля заданы для отображения обводки в фокусе */
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  min-width: 100%;
+  padding: 2px;
+}
+
+.content__video-card-description-container {
+  width: 100%;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.content__video-card-description {
+  font-weight: 400;
+  line-height: 0.9em;
+}
+
+.content__video-card-thumbnail {
+  overflow: hidden;
+  max-width: 194px;
+  min-height: 103px;
+  object-fit: cover;
+}
+
+.more-button {
+  min-width: 100%;
 }
