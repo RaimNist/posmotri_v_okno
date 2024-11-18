@@ -56,7 +56,6 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   gap: 30px;
-  /* justify-items: center; */
   align-items: end;
 }
 
@@ -188,7 +187,7 @@ ol {
 }
 
 .content__details {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -256,7 +255,7 @@ ol {
 }
 
 .content__video-card-description-container {
-  width: 100%;
+  width: 100%; /* Высота фиксированная для того, чтобы блок с текстом занимал все оставшееся свободное пространство */
 }
 
 .content__video-card-title {
