@@ -70,6 +70,7 @@ ol {
   min-width: 100%;
   max-height: 386px;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -122,10 +123,6 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__textfield:active {
-  border: 1px solid #fff;
-}
-
 .search-form__checkbox-list {
   display: flex;
   align-items: center;
@@ -153,7 +150,6 @@ ol {
 
 .button {
   cursor: pointer;
-  max-height: 34px;
   border: 1px solid #fff;
   background-color: transparent;
   font-family: inherit;
@@ -207,7 +203,7 @@ ol {
 
 .content__list {
   height: 298px; /* Высота фиксированная для того, чтобы заголовок не падал вниз, если нет подходящих видео */
-  overflow-x: hidden;
+  text-overflow: ellipsis;
   overflow-y: auto; /* Убирает скролл, если нет подходящих видео */
   position: relative;
 }
@@ -216,11 +212,11 @@ ol {
   margin-bottom: 30px;
 }
 
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
