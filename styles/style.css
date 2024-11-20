@@ -183,10 +183,10 @@ ol {
 }
 
 .content__details {
-  min-width: 412px;
+  min-width: 416px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 23px;
 }
 
 .title {
@@ -206,10 +206,11 @@ ol {
   text-overflow: ellipsis;
   overflow-y: auto; /* Убирает скролл, если нет подходящих видео */
   position: relative;
+  width: 399px;
 }
 
 .content__list-item:not(:last-child) {
-  margin-bottom: 29px;
+  margin-bottom: 30px;
 }
 
 .content__list-item:hover {
@@ -272,7 +273,7 @@ ol {
 
 .content__video-card-thumbnail {
   overflow: hidden;
-  width: 100%;
+  width: 103%;
   height: 103px;
   object-fit: cover;
   margin-left: 10px;
